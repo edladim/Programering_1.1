@@ -15,7 +15,12 @@ public class kiloPrice {
         double price_gap = Math.round(Math.abs((grocery_a_price - grocery_b_price) * 100.0) / 100.0);
         
         if (grocery_a_price < grocery_b_price){
-            System.out.println("Grocery A is the cheapest with a kilo price of: " + grocery_a_price + " kr/kg\nThe price gap is " + price_gap + " kr");
+            if (grocery_a_price == grocery_b_price){
+                System.out.println("Grocery A and grocery B costs the same!");
+            } else {
+                System.out.println("Grocery A is the cheapest with a kilo price of: " + grocery_a_price + " kr/kg\nThe price gap is " + price_gap + " kr");
+            }
+            
         } else{
             System.out.println("Grocery B is the cheapest with a kilo price of: " + grocery_b_price + " kr/kg\nThe price gap is " + price_gap + " kr" + grocery_a_price);
 
