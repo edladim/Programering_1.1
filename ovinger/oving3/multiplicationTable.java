@@ -5,18 +5,25 @@ public class multiplicationTable {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Which part of the multiplicationTable do you want to view? \nPlease write in the format \"number-number\""); 
+        System.out.print("Which part of the multiplicationTable do you want to view?"); 
 
-        String year = input.nextLine();
+        String numbers = input.nextLine();
 
-        String[] calculation = year.split("[ |-|,|.]");
+        String[] calculation = numbers.split("[ |-|,|.|*|x]");
 
-        for (String number:calculation)
-            
-            System.out.println(number);
+        int number1 = Integer.parseInt(calculation[0]);
+        int number2 = Integer.parseInt(calculation[1]);
 
-
+        multiplication(number1);
+        multiplication(number2);
+       
         input.close();
     }
 
+    public static void multiplication(int number){
+        System.out.println("\n" + number + " table");
+        for (int i = 1; i <= 10; i++){
+            System.out.println(number + " * " + i + " = " + number * i);
+        }
+    }
 }
