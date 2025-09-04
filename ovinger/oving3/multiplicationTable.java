@@ -5,12 +5,24 @@ public class multiplicationTable {
 
         Scanner input = new Scanner(System.in);
         System.out.print("Which part of the multiplicationTable do you want to view?"); 
-        String factors = input.nextLine();
+        
+        boolean approved = false; 
+        int start = 0;
+        int end = 0;
 
-        String[] calculation = factors.split("[-|.|*|x|,]");
-        int start = Integer.parseInt(calculation[0]);
-        int end = Integer.parseInt(calculation[1]);
-
+        do {
+            String factors = input.nextLine();
+            try {
+                String[] calculation = factors.split("[-,\\.]");
+                start = Integer.parseInt(calculation[0]);
+                end = Integer.parseInt(calculation[1]);
+                approved = true;
+            } catch (Exception e){
+                System.err.println("NB! Your input was not accepted, please write in the format \"NUMBER-NUMBER\"");
+            }   
+        }
+        while (!approved);
+    
         multiplication(start, end);
        
         input.close();
