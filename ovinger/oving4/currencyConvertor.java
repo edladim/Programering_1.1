@@ -76,7 +76,7 @@ class Currency {
         this.rate = rate;
     }
 
-    //Methodes
+    //Methods
     public String getName(){
         return name;
     }

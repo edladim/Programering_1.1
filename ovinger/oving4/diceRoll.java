@@ -3,7 +3,16 @@ import java.util.*;
 public class diceRoll {
     public static void main(String[] args){
 
+        Player playerA = new Player();
+        Player playerB = new Player();
 
+        System.out.println("--- 100 Dice game ---");
+
+        while (!playerA.isDone() && !playerB.isDone()) {
+            playerA.rollDice();
+            playerB.rollDice();
+            System.out.printf("Player A got %,3d points and player B got %,3d points\n", playerA.getSumPoints(), playerB.getSumPoints());
+        }
     }
 }
 
@@ -19,7 +28,7 @@ class Player{
     }
 
     public boolean isDone(){
-        return sumPoints == 100;
+        return sumPoints >= 100;
     }
     
     public void rollDice(){
@@ -32,8 +41,10 @@ class Player{
             sumPoints += diceRoll;
         }
 
+        /*
         if(sumPoints > 100){
             sumPoints -= diceRoll;
         }
+        */
     }
 }
