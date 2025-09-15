@@ -6,13 +6,24 @@ public class diceRoll {
         Player playerA = new Player();
         Player playerB = new Player();
 
-        System.out.println("--- 100 Dice game ---");
+        System.out.println("      --- 100 Dice game --- \n");
+        System.out.println("----------Player A -- Player B --");
+        int round = 0;
+        String player = "x";
 
         while (!playerA.isDone() && !playerB.isDone()) {
             playerA.rollDice();
             playerB.rollDice();
-            System.out.printf("Player A got %,3d points and player B got %,3d points\n", playerA.getSumPoints(), playerB.getSumPoints());
+            System.out.printf("|Rd: %,3d| Score: %,3d| Score: %,3d| \n", round, playerA.getSumPoints(), playerB.getSumPoints());
+            
+            round += 1;
         }
+        if (playerA.getSumPoints() == 100){
+            player = "A";
+        }else{
+            player = "B";
+        }
+        System.out.printf("----------Player %s won!---------", player);
     }
 }
 
