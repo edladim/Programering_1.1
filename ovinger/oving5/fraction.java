@@ -11,7 +11,8 @@ public class Fraction {
         }
         this.numerator = numerator;
         this.denominator = denominator;
-    
+    }
+
     public Fraction(int numerator) {
         this(numerator, 1);
     }
@@ -27,15 +28,39 @@ public class Fraction {
     }
 
     // Method to add two fractions
-    public void add(Fraction fractionToAdd) {
-        int newNumerator = this.numerator * fractionToAdd.denominator + fractionToAdd.numerator * this.denominator;
-        int newDenominator = this.denominator * fractionToAdd.denominator;
+    public void add(Fraction other) {
+        int newNumerator = this.numerator * other.denominator + other.numerator * this.denominator;
+        int newDenominator = this.denominator * other.denominator;
 
         this.numerator = newNumerator;
         this.denominator = newDenominator;
     }
 
+    // Method to subtract two fractions
+    public void subtract(Fraction other) {
+        int newNumerator = this.numerator * other.denominator - other.numerator * this.denominator;
+        int newDenominator = this.denominator * other.denominator;
 
+        this.numerator = newNumerator;
+        this.denominator = newDenominator;
+    }
 
+    // Method to multiply two fractions
+    public void multiply(Fraction other) {
+        int newNumerator = this.numerator * other.numerator;
+        int newDenominator = this.denominator * other.denominator;
+
+        this.numerator = newNumerator;
+        this.denominator = newDenominator;
+    }
+
+    //Method to divide two fractions
+    public void divide(Fraction other) {
+        int newNumerator = this.numerator * other.denominator;
+        int newDenominator = this.denominator * other.numerator;
+
+        this.numerator = newNumerator;
+        this.denominator = newDenominator;
+    }
 
 }
