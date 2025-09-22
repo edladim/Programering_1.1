@@ -13,10 +13,21 @@ public class InstanceCounter {
         }
 
         System.out.println("- INSTANCE COUNTER -");
-        iterations = 0;
+        int iterationCounter = 0;
+
         for (int number : numbers){
-            System.out.printf("%d occurred %-3d times \n", iterations, number);
-            iterations++;
+            int rounded = (int) (Math.round(number / 10.0) * (iterations / 100));
+            int numberOfStars = (rounded / (iterations / 100));
+
+            StringBuilder stars = new StringBuilder();
+            for (int i = 0; i < numberOfStars; i++) {
+                stars.append("*");
+            }
+
+            String starsString = stars.toString();
+            System.out.printf("%d occurred %-3d times %s \n", iterationCounter, number, starsString);
+
+            iterationCounter++;
         }
         System.out.println("------- Done -------");
     }
