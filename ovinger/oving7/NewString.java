@@ -13,10 +13,14 @@ public class NewString {
         String[] words = str.split(" ");
 
         StringBuilder sb = new StringBuilder();
-        for (String word: words) {
+        for (String word : words) {
             sb.append(word.charAt(0));
         }
         return sb;
+    }
+
+    public String removeChar(char c) {
+        return str.replace(String.valueOf(c), "");
     }
 
 }
