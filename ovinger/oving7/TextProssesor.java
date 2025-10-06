@@ -1,5 +1,5 @@
 public class TextProssesor {
-    
+
     // Instance field
     private String text;
 
@@ -46,13 +46,13 @@ public class TextProssesor {
         String[] words = text.split("\\s+");
         int totalLength = 0;
         for (String word : words) {
-                for (int i = 0; i < word.length(); i++) {
-                    char c = word.charAt(i);
-                    if (!Character.isLetter(c)) {
-                        word = word.substring(0, i) + word.substring(i + 1);
-                        i--; // Adjust index after removal
-                    }
+            for (int i = 0; i < word.length(); i++) {
+                char c = word.charAt(i);
+                if (!Character.isLetter(c)) {
+                    word = word.substring(0, i) + word.substring(i + 1);
+                    i--; // Adjust index after removal
                 }
+            }
             totalLength += word.length();
         }
         double average = (double) totalLength / words.length;
