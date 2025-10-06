@@ -9,6 +9,7 @@ public class NewString {
     }
 
     // Methodes
+    // Returns a StringBuilder containing the first letter of each word in the string
     public StringBuilder abbreviation(){
         String[] words = str.split(" ");
 
@@ -19,8 +20,8 @@ public class NewString {
         return sb;
     }
 
+    // Returns a new string with all occurrences of the specified character removed
     public String removeChar(char c) {
         return str.replace(String.valueOf(c), "");
     }
-
 }
