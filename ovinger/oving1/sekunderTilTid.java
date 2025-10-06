@@ -16,5 +16,6 @@ public class sekunderTilTid {
     
         System.out.print(tid + "sekunder er det samme som " + timer + " timer " + minutter + " minutter " + sekunder + "sekunder");
 
+        input.close();
     }
 }
