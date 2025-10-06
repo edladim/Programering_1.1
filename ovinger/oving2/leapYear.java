@@ -8,6 +8,7 @@ public class leapYear {
         System.out.print("Type in a year: "); //Printer ut en overskrift og et felt hvor man kan skrive inn antall tommer
 
         int year = input.nextInt();
+        input.close();
         
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
             System.out.println(year + " er et skuddår");

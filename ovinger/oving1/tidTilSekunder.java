@@ -9,6 +9,7 @@ public class tidTilSekunder {
         System.out.print(utskrift);
 
         int value = input.nextInt();
+        input.close();
 
         return value;
     }
