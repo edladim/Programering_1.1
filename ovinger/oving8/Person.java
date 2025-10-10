@@ -1,10 +1,10 @@
 /**
  * Represents a person with first name last name and, year of birth.
  */
-public class Person {
-  private String firstName;
-  private String lastName;
-  private int yearOfBirth;
+public final class Person {
+  private final String firstName;
+  private final String lastName;
+  private final int yearOfBirth;
 
   /**
    * Constructs a new person with the specifyed first name, last name and year of birth.
