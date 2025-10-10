@@ -1,3 +1,5 @@
+import java.util.GregorianCalendar;
+
 /**
  * Employee class representing an employee with basic attributes.
  */
@@ -96,5 +98,69 @@ public class Employee {
   }
 
 
-  
+  /**
+   * Calculates the tax deducted per month.
+   *
+   * @return the tax deducted per month (in kroner)
+   */
+  public double monthlyDeductedTax() {
+    return monthlySalary * taxRate / 100.0;
+  }
+
+  /**
+   * Calculates gross anual salary.
+   *
+   * @return gross anual salary
+   */
+  public double grossSalary() {
+    return monthlySalary * 12;
+  }
+
+  /**
+   * Calculates anual deducted tax.
+   *
+   * @return anual deducted tax
+   */
+  public double anualDeductedTax() {
+    return monthlyDeductedTax() * 10.5;
+  }
+
+  /**
+   * Returnes the employees name in the fromat: "Last name, first name".
+   *
+   * @return name in the fromat: "Last name, first name"
+   */
+  public String getEmployeeName() {
+    return personalia.getLastName() + ", " + personalia.getLastName();
+  }
+
+  /**
+   * Returns age of the employee.
+   *
+   * @return age in years
+   */
+  public int getEmployeeAge() {
+    int currentYear = new GregorianCalendar().get(java.util.Calendar.YEAR);
+    return currentYear - personalia.getYearOfBirth();
+  }
+
+  /**
+   * Number of years in the firm.
+   *
+   * @return number of years in the firm
+   */
+  public int yearsInFirm() {
+    int currentYear = new GregorianCalendar().get(java.util.Calendar.YEAR);
+    return currentYear - yearHired;
+  }
+
+  /**
+   * Checks if the employee has been employed for more than the given number of years.
+   *
+   * @param year the number of years to check
+   * @return true if employed for more than the given years, false otherwise
+   */
+  public boolean hasBeenEmployedLongerThan(int year) {
+    return yearsInFirm() > year;
+  }
 }
