@@ -84,7 +84,7 @@ public class Employee {
    *
    * @param monthlySalary the new monthly salary
    */
-  public void setMonthlySalary(int monthlySalary) {
+  public void setMonthlySalary(double monthlySalary) {
     this.monthlySalary = monthlySalary;
   }
   
@@ -93,10 +93,11 @@ public class Employee {
    *
    * @param taxRate the new tax rate
    */
-  public void setTaxRate(int taxRate) {
+  public void setTaxRate(double taxRate) {
     this.taxRate = taxRate;
   }
 
+  // Other methods
 
   /**
    * Calculates the tax deducted per month.
@@ -162,5 +163,23 @@ public class Employee {
    */
   public boolean hasBeenEmployedLongerThan(int year) {
     return yearsInFirm() > year;
+  }
+
+  /**
+   * Returns a string representation of the employee.
+   *
+   * @return string representation of the employee
+   */
+  public String toString() {
+    return "Employee{" 
+            + "personalia = " 
+            + personalia.getFirstName() + " " 
+            + personalia.getLastName() + " " 
+            + personalia.getYearOfBirth()
+            + ", employeeNumber = " + employeeNumber 
+            + ", yearHired = " + yearHired 
+            + ", monthlySalary = " + monthlySalary 
+            + ", taxRate = " + taxRate 
+            + '}';
   }
 }
