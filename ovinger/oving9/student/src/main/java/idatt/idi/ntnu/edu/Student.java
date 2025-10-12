@@ -14,9 +14,9 @@ public class Student {
    * @param name the name of the student
    * @param numberOfTasks the number of completed tasks
    */
-  public Student(String name, int numberOfTasks) {
+  public Student(String name) {
     this.name = name;
-    this.numberOfTasks = numberOfTasks;
+    this.numberOfTasks = 0;
   }
 
   // Getters
