@@ -1,3 +1,5 @@
+package idatt.idi.ntnu.edu;
+
 /**
  * Represents a student with a name and a number of completed tasks.
  */
