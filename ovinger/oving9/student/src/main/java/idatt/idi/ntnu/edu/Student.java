@@ -12,7 +12,6 @@ public class Student {
    * Constructs a Student with the specified name and number of completed tasks.
    *
    * @param name the name of the student
-   * @param numberOfTasks the number of completed tasks
    */
   public Student(String name) {
     this.name = name;
