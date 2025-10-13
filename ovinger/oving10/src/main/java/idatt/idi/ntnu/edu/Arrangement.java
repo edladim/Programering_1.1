@@ -49,13 +49,13 @@ public class Arrangement {
   public String getType() { 
     return type; 
   }
-  
+
   public long getTime() { 
     return time; 
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return String.format("ID: %d, Name: %s, Location: %s, Organizer: %s, Type: %s, Time: %d",
                           id, name, location, organizer, type, time);
   }
