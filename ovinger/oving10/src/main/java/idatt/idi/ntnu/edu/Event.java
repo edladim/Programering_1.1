@@ -1,9 +1,9 @@
 package idatt.idi.ntnu.edu;
 
 /**
- * Represents an arrangement with details such as ID, name, place, organizer, type, and time.
+ * Represents an event with details such as ID, name, place, organizer, type, and time.
  */
-public class Arrangement {
+public class Event {
   private int id;
   private String name;
   private String place;
@@ -12,15 +12,15 @@ public class Arrangement {
   private long time;
 
   /**
-   * Constructs an Arrangement with the specified details.
+   * Constructs an Event with the specified details.
    *
-   * @param id the arrangement ID
-   * @param name the name of the arrangement
-   * @param place the place where the arrangement is held
-   * @param organizer the organizer of the arrangement
-   * @param type the type of the arrangement
+   * @param id the Event ID
+   * @param name the name of the Event
+   * @param place the place where the Event is held
+   * @param organizer the organizer of the Event
+   * @param type the type of the Event
    */
-  public Arrangement(int id, String name, String place, String organizer, String type) {
+  public Event(int id, String name, String place, String organizer, String type) {
     this.id = id;
     this.name = name;
     this.location = location;
