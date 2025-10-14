@@ -1,10 +1,8 @@
 package idatt.idi.ntnu.edu;
 
-import java.nio.charset.CoderResult;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
@@ -16,7 +14,8 @@ public class EventRegister {
 
   /**
    * Registers a new event.
-   * @param event
+   *
+   * @param event the event to be added
    */
   public void addEvent(Event event) {
     events.add(event);
@@ -43,8 +42,7 @@ public class EventRegister {
    */
   public List<Event> getAllEventsAtDate(long date) {
     return events.stream()
-        .filter((event) -> event.getTime()
-        .equals(date / 1000))
+        .filter((event) -> event.getTime() / 10000 == date)
         .collect(Collectors.toList());
   }
 
@@ -57,51 +55,55 @@ public class EventRegister {
    */
   public List<Event> getEventsInDateInterval(long fromDate, long toDate) {
     return events.stream()
-        .filter((event) -> event.getTime() / 1000 >= fromDate && event.getTime() / 1000 <= toDate)
-        .sorted(Comparator.comparingLong(Event::getTime()))
+        .filter((event) -> event.getTime() >= fromDate && event.getTime() <= toDate)
+        .sorted(Comparator.comparingLong(Event::getTime))
         .collect(Collectors.toList());
   }
   
+  
   /**
-   * Registers a new event.
+   * Returns a list of all events sorted by location.
    *
-   * @param event the event to be registered
+   * @return a list of events sorted by location
    */
   public List<Event> getEventsSortedByLocation() {
     return events.stream()
-        .sorted(Comparator.comparing(Event::getLocation()))
+        .sorted(Comparator.comparing(Event::getLocation))
         .collect(Collectors.toList());
   }
 
+  
   /**
-   * Registers a new event.
+   * Returns a list of all events sorted by type.
    *
-   * @param event the event to be registered
+   * @return a list of events sorted by type
    */
   public List<Event> getEventsSortedByType() {
     return events.stream()
-        .sorted(Comparator.comparing(Event::getType()))
+        .sorted(Comparator.comparing(Event::getType))
         .collect(Collectors.toList());
   }
 
+  
   /**
-   * Registers a new event.
+   * Returns a list of all events sorted by time.
    *
-   * @param event the event to be registered
+   * @return a list of events sorted by time
    */
   public List<Event> getEventsSortedByTime() {
     return events.stream()
-        .sorted(Comparator.comparing(Event::getTime()))
+        .sorted(Comparator.comparingLong(Event::getTime))
         .collect(Collectors.toList());
   }
 
+
   /**
-   * Registers a new event.
+   * Returns a list of all registered events.
    *
-   * @param event the event to be registered
+   * @return a list of all events
    */
-  public List<Arrangement> getAllArrangements() {
-        return new ArrayList<>(arrangements);
-    }
+  public List<Event> getAllEvents() {
+    return new ArrayList<>(events);
+  }
   
 }
