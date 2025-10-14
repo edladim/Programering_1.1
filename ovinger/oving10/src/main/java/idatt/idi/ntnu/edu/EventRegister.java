@@ -4,6 +4,7 @@ import java.nio.charset.CoderResult;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
@@ -57,5 +58,27 @@ public class EventRegister {
         .sorted(Comparator.comparingLong(Event::getTime()))
         .collect(Collectors.toList());
   }
+  
+  public List<Event> getEventsSortedByLocation() {
+    return events.stream()
+        .sorted(Comparator.comparing(Event::getLocation()))
+        .collect(Collectors.toList());
+  }
+
+  public List<Event> getEventsSortedByType() {
+    return events.stream()
+        .sorted(Comparator.comparing(Event::getType()))
+        .collect(Collectors.toList());
+  }
+
+  public List<Event> getEventsSortedByTime() {
+    return events.stream()
+        .sorted(Comparator.comparing(Event::getTime()))
+        .collect(Collectors.toList());
+  }
+
+  public List<Arrangement> getAllArrangements() {
+        return new ArrayList<>(arrangements);
+    }
   
 }
