@@ -4,15 +4,15 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Client class for interacting with the ArrangementRegister.
+ * Client class for interacting with the EventRegister.
  */
 public class Client {
 
-  private static ArrangementRegister register = new ArrangementRegister();
+  private static EventRegister register = new EventRegister();
   private static Scanner scanner = new Scanner(System.in);
 
   /**
-   * The main method to run the ArrangementClient application.
+   * The main method to run the EventClient application.
    * Handles user interaction and menu navigation.
    *
    * @param args command-line arguments (not used)
@@ -23,14 +23,14 @@ public class Client {
       printMenu();
       String choice = scanner.nextLine().trim();
       switch (choice) {
-        case "1" -> registerArrangement();
-        case "2" -> showArrangementsByLocation();
-        case "3" -> showArrangementsByDate();
-        case "4" -> showArrangementsInInterval();
-        case "5" -> showArrangementsSortedByLocation();
-        case "6" -> showArrangementsSortedByType();
-        case "7" -> showArrangementsSortedByTime();
-        case "8" -> showAllArrangements();
+        case "1" -> addEvent();
+        case "2" -> showEventsByLocation();
+        case "3" -> showEventsByDate();
+        case "4" -> showEventsInInterval();
+        case "5" -> showEventsSortedByLocation();
+        case "6" -> showEventsSortedByType();
+        case "7" -> showEventsSortedByTime();
+        case "8" -> showAllEvents();
         case "0" -> running = false;
         default -> System.out.println("Invalid choice. Try again.");
       }
