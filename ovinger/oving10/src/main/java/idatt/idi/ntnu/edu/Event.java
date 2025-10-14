@@ -9,7 +9,7 @@ public class Event {
   private String location;
   private String organizer;
   private String type;
-  private long time;
+  private long time; // Format: yyyymmddhhmm
 
   /**
    * Constructs an Event with the specified details.
@@ -20,7 +20,7 @@ public class Event {
    * @param organizer the organizer of the Event
    * @param type the type of the Event
    */
-  public Event(int id, String name, String location, String organizer, String type) {
+  public Event(int id, String name, String location, String organizer, String type, long time) {
     this.id = id;
     this.name = name;
     this.location = location;
