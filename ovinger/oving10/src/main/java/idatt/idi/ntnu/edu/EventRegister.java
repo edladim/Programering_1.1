@@ -2,6 +2,7 @@ package idatt.idi.ntnu.edu;
 
 import java.nio.charset.CoderResult;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,4 +44,18 @@ public class EventRegister {
         .collect(Collectors.toList());
   }
 
+  /**
+   * Returns a list of all events within the specified date interval.
+   *
+   * @param fromDate the start date of the interval (format: yyyymmddhhmm)
+   * @param toDate the end date of the interval (format: yyyymmddhhmm)
+   * @return a list of events within the given date interval, sorted by time
+   */
+  public List<Event> getEventsInDateInterval(long fromDate, long toDate) {
+    return events.stream()
+        .filter((event) -> event.getTime() / 1000 >= fromDate && event.getTime() / 1000 <= toDate)
+        .sorted(Comparator.comparingLong(Event::getTime()))
+        .collect(Collectors.toList());
+  }
+  
 }
