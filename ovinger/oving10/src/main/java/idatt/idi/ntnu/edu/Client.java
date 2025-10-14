@@ -36,4 +36,19 @@ public class Client {
       }
     }
   }
+
+  private static void printMenu() {
+    System.out.println("\n--- Arrangement Register ---");
+    System.out.println("1. Register new arrangement");
+    System.out.println("2. Find arrangements by location");
+    System.out.println("3. Find arrangements by date");
+    System.out.println("4. Find arrangements in time interval");
+    System.out.println("5. List all arrangements sorted by location");
+    System.out.println("6. List all arrangements sorted by type");
+    System.out.println("7. List all arrangements sorted by time");
+    System.out.println("8. Show all arrangements");
+    System.out.println("0. Exit");
+    System.out.print("Choice: ");
+  }
+
 }
