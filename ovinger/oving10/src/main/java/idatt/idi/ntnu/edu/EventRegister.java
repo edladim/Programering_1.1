@@ -14,10 +14,13 @@ import java.util.stream.Collectors;
 public class EventRegister {
   private List<Event> events = new ArrayList<>();
 
+  /**
+   * Registers a new event.
+   * @param event
+   */
   public void addEvent(Event event) {
     events.add(event);
   }
-
   
   /**
    * Returns a list of all events at the specified location.
@@ -59,24 +62,44 @@ public class EventRegister {
         .collect(Collectors.toList());
   }
   
+  /**
+   * Registers a new event.
+   *
+   * @param event the event to be registered
+   */
   public List<Event> getEventsSortedByLocation() {
     return events.stream()
         .sorted(Comparator.comparing(Event::getLocation()))
         .collect(Collectors.toList());
   }
 
+  /**
+   * Registers a new event.
+   *
+   * @param event the event to be registered
+   */
   public List<Event> getEventsSortedByType() {
     return events.stream()
         .sorted(Comparator.comparing(Event::getType()))
         .collect(Collectors.toList());
   }
 
+  /**
+   * Registers a new event.
+   *
+   * @param event the event to be registered
+   */
   public List<Event> getEventsSortedByTime() {
     return events.stream()
         .sorted(Comparator.comparing(Event::getTime()))
         .collect(Collectors.toList());
   }
 
+  /**
+   * Registers a new event.
+   *
+   * @param event the event to be registered
+   */
   public List<Arrangement> getAllArrangements() {
         return new ArrayList<>(arrangements);
     }
