@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class EventRegister {
   private List<Event> events = new ArrayList<>();
 
-  public void registerNewevent(Event event) {
+  public void addEvent(Event event) {
     events.add(event);
   }
 
@@ -23,10 +23,23 @@ public class EventRegister {
    * @param location the location to filter events by
    * @return a list of events at the given location
    */
-  public List<Event> getAllEventsAt(String location) {
+  public List<Event> getAllEventsAtLocation(String location) {
     return events.stream()
         .filter((event) -> event.getLocation()
-        .equalsIgnoreCase())
+        .equalsIgnoreCase(location))
+        .collect(Collectors.toList());
+  }
+
+  /**
+   * Returns a list of all events at the specified date.
+   *
+   * @param date the date to filter events by (format: yyyymmddhhmm)
+   * @return a list of events at the given date
+   */
+  public List<Event> getAllEventsAtDate(long date) {
+    return events.stream()
+        .filter((event) -> event.getTime()
+        .equals(date / 1000))
         .collect(Collectors.toList());
   }
 
