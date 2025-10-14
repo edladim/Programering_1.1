@@ -1,12 +1,12 @@
 package idatt.idi.ntnu.edu;
 
 /**
- * Represents an event with details such as ID, name, place, organizer, type, and time.
+ * Represents an event with details such as ID, name, location, organizer, type, and time.
  */
 public class Event {
   private int id;
   private String name;
-  private String place;
+  private String location;
   private String organizer;
   private String type;
   private long time;
@@ -16,11 +16,11 @@ public class Event {
    *
    * @param id the Event ID
    * @param name the name of the Event
-   * @param place the place where the Event is held
+   * @param location the location where the Event is held
    * @param organizer the organizer of the Event
    * @param type the type of the Event
    */
-  public Event(int id, String name, String place, String organizer, String type) {
+  public Event(int id, String name, String location, String organizer, String type) {
     this.id = id;
     this.name = name;
     this.location = location;
