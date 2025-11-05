@@ -18,7 +18,7 @@ public class MenuRegister {
 
   public List<Dish> findDishesByType(DishType type) {
     return dishes.values().stream()
-        .filter(d -> d.getType() == type)
+        .filter(dish -> dish.getType() == type)
         .toList();
   }
 }
