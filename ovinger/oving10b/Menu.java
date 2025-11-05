@@ -14,21 +14,21 @@ public class Menu {
       return name;
     }
 
-    public Set<Dish> getDishes() {
-      return dishes;
-    }
+  public Set<Dish> getDishes() {
+    return dishes;
+  }
 
-    public double totalPrice() {
-      return dishes.stream()
-          .mapToDouble(Dish::getPrice)
-          .sum();
-}
+  public double totalPrice() {
+    return dishes.stream()
+        .mapToDouble(Dish::getPrice)
+        .sum();
+  }
 
-    @Override
-    public String toString() {
-      String dishList = dishes.stream()
-          .map(Dish::toString)
-          .collect(Collectors.joining(", "));
-      return String.format("Menu: %s | Dishes: [%s] | Total: %.2f", name, dishList, totalPrice());
-    }
+  @Override
+  public String toString() {
+    String dishList = dishes.stream()
+        .map(Dish::toString)
+        .collect(Collectors.joining(", "));
+    return String.format("Menu: %s | Dishes: [%s] | Total: %.2f", name, dishList, totalPrice());
+  }
 }
