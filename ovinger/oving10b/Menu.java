@@ -18,11 +18,17 @@ public class Menu {
       return dishes;
     }
 
+    public double totalPrice() {
+      return dishes.stream()
+          .mapToDouble(Dish::getPrice)
+          .sum();
+}
+
     @Override
     public String toString() {
       String dishList = dishes.stream()
           .map(Dish::toString)
           .collect(Collectors.joining(", "));
-      return String.format("Menu: %s | Dishes: [%s] | Total: %.2f", name, dishList);
+      return String.format("Menu: %s | Dishes: [%s] | Total: %.2f", name, dishList, totalPrice());
     }
 }
